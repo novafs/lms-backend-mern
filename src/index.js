@@ -18,10 +18,7 @@ connectDB();
 
 const port = process.env.PORT || 3000;
 
-app.use(cors({
-origin: 'https://lms-course.vercel.app/',
-methods: ['GET', 'POST', 'PUT', 'DELETE'],
-}));
+app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
