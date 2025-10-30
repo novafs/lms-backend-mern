@@ -18,6 +18,9 @@ connectDB();
 
 const port = process.env.PORT || 3000;
 
+app.use(express.json()); // Untuk parsing application/json
+app.use(express.urlencoded({ extended: true })); // Untuk parsing application/x-www-form-urlencoded
+
 app.use(
   cors({
     origin: process.env.APP_URL,
@@ -27,7 +30,8 @@ app.use(
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
-app.use(bodyParser.json());
+
+// app.use(bodyParser.json());
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
