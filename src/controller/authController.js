@@ -42,9 +42,9 @@ export const signUpAction = async (req, res) => {
           email: user.email,
         },
         callbacks: {
-          finish: `http://${process.env.APP_URL}/success-checkout`,
-          unfinish: `http://${process.env.APP_URL}/transaction/unfinish`,
-          error: `http://${process.env.APP_URL}/transaction/error`,
+          finish: `${process.env.APP_URL}/success-checkout`,
+          unfinish: `${process.env.APP_URL}/transaction/unfinish`,
+          error: `${process.env.APP_URL}/transaction/error`,
         },
       }),
       headers: {

@@ -2,9 +2,10 @@ import TransactionModel from "../models/transactionModel.js";
 
 export const handlePayment = async (req, res) => {
     try {
+        const query = req.query; // transaction_status
         const body = req.body; // transaction_id, status
         const orderId = body.order_id;
-        switch (body.transaction_status) {
+        switch (query.transaction_status) {
             case "capture":
             case "settlement":
                 await TransactionModel.findByIdAndUpdate(orderId, {
