@@ -35,7 +35,7 @@ app.use(
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  res.json({ text: "Hello, World guys!" });
+  res.json({ text: "API is running . . ." });
 });
 
 app.use("/api", globalRoutes);
